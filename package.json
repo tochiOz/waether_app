@@ -4,7 +4,8 @@
   "description": "A Weather application",
   "main": "index.js",
   "scripts": {
-    "test": "node"
+    "test": "node",
+    "spin": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/Tueloper/waether_app/issues"
   },
-  "homepage": "https://github.com/Tueloper/waether_app#readme"
+  "homepage": "https://github.com/Tueloper/waether_app#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "nodemon": "^1.18.11",
+    "request": "^2.88.0",
+    "yargs": "^13.2.2"
+  }
 }
