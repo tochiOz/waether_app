@@ -21,7 +21,7 @@ if (!address) {
             }
 
             console.log(chalk.green('Data:', 'cordinates: ' + latitude + ', ' + longitude + ', ' + location))
-            console.log(chalk.inverse.yellow('Weather Report: ' + summary, 'It is currently ' + temperature + ' degrees out and there is a ' + precipation + '%' + ' of rain.' ))
+            console.log(chalk.inverse.cyan('Weather Report: ' + summary, 'It is currently ' + temperature + ' degrees out and there is a ' + precipation + '%' + ' of rain.' ))
                             
         }) 
        
