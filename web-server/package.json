@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node",
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/app.js -e js,hbs"
   },
   "keywords": [
     "backend"
@@ -13,8 +13,11 @@
   "author": "Tueloper",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
     "chalk": "^2.4.2",
-    "nodemon": "^1.18.11"
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "nodemon": "^1.18.11",
+    "request": "^2.88.0",
+    "sass-loader": "^7.1.0"
   }
 }
