@@ -7,7 +7,7 @@ const forcast = require('./utils/forcast')
 
 const app = express()
 
-const port = process.env.port || 7000
+const port = process.env.PORT || 7000
 
 const publicPath = path.join(__dirname, '../public')
 //set helps us to set a value for a given express controller
