@@ -2,6 +2,8 @@ const express = require('express')
 const chalk = require('chalk')
 const path = require('path')
 const hbs = require('hbs')
+const geocode = require('./utils/geocode')
+const forcast = require('./utils/forcast')
 
 const app = express()
 
@@ -27,6 +29,38 @@ app.get('/', (req, res) => {
         title: "Weather-App",
         name: 'Tueloper'
     })
+})
+
+app.get('/weather', (req, res) => {
+
+    const address = req.query.address
+    if (!req.query.address) {
+        return res.send({
+            error: 'Unable to find Address Location try anoter search'
+        })
+    }
+
+    geocode(address , (err, { latitude, longitude, location } = {}) => {
+        if (err) {
+            return res.send({ err })
+        } 
+           
+        forcast(latitude, longitude, (err, { summary, temperature, precipation}) => {
+            if (err) {
+                return res.send({ err })
+            }
+        
+            res.send({
+                Latitude: latitude,
+                Longitude: longitude,
+                Location: location,
+                Report: 'It is currently ' + temperature + ' degrees out and there is ' + precipation + '%' + ' of rain.',
+                Summary: summary
+            })            
+        }) 
+       
+    })
+    
 })
 
 app.get('/about', (req, res) => {
