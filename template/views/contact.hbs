@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://img.icons8.com/nolan/64/000000/partly-cloudy-day.png">
+    <title>Weather-App</title>
+    <!--Google Font link-->
+   <link href="https://fonts.googleapis.com/css?family=Handlee|Indie+Flower|Nanum+Myeongjo" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="/css/bootsnav.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="main-contact">
+        {{>header}}
+            <h1 class="home">{{ message }}</h1>
+
+            <div class="container contact-form">
+                <div class="contact-image">
+                    <img src="http://www.animatedimages.org/data/media/361/animated-cloud-image-0011.gif" alt="rocket_contact"/>
+                </div>
+                <form method="post">
+                    <h3>Drop Us a Message</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{>footer}}
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

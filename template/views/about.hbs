@@ -15,9 +15,25 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <h1>{{ about }}</h1>
+        <h1 class="home" style="">{{ about }}</h1>
+
+        <div class="row about">
+            <div class="col-md-6 col-xs-12">
+                <img src="/images/tue.jpg" alt="Tueloper" class="img-responsive align-self-center img-thumbnail img">
+            </div>
+            <div class="col-md-6 col-xs-12 primary rep" >
+                <p>
+                    This application was created using node.js for the backend and handlebars as a Templating Engine, so this application is wwell sophisticated.<br>
+                    It is well queried, it can pick alphabets as small as one single letter and give you weather report of that single location.<br>
+                    It is a well designed application, so use and be blessed.
+                </p>
+            </div>
+        </div>
         
     </div>
     {{>footer}}
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
