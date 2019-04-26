@@ -13,7 +13,7 @@
 
 .home{
     padding: 50px 0 20px;
-    font-size: 70px;
+    font-size: 60px;
 }
 
 .form
@@ -32,7 +32,15 @@ button
     font-size: 20px;
     color: azure;
 }
-
-.nav p {
-    color: ;
+.about
+{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 70px 0 0;
+}
+.img
+{
+    height: 250px;
+    width: 300px;
+    border-radius: 50%;
 }
