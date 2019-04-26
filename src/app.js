@@ -71,9 +71,9 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        message: "Weather-App is here to help You"
+app.get('/contact', (req, res) => {
+    res.render('contact', {
+        message: "Contact"
     })
 })
 
