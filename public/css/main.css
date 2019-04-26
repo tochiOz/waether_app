@@ -1,0 +1,38 @@
+*
+{
+    font-family: 'Handlee', cursive;
+    background-size: cover;
+    background: url(../images/homebg.png);
+    color: #030b4e;
+}
+.main-content{
+    height: 92vh;
+    padding: 0 300px;
+    text-align: center;;
+}
+
+.home{
+    padding: 50px 0 20px;
+    font-size: 70px;
+}
+
+.form
+{
+    text-align: center;
+}
+
+button
+{
+    margin: 5px;
+}
+
+.rep p 
+{
+    text-align: left;
+    font-size: 20px;
+    color: azure;
+}
+
+.nav p {
+    color: ;
+}

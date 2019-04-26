@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="icon" href="https://img.icons8.com/nolan/64/000000/partly-cloudy-day.png">
+    <title>Weather-App</title>
+    <!--Google Font link-->
+   <link href="https://fonts.googleapis.com/css?family=Handlee|Indie+Flower|Nanum+Myeongjo" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="/css/bootsnav.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+ 
+</head>
+<body>
+
+    <div class="main-content" >
+   
+        {{>header}}
+
+        <!--Home Sections-->
+            <h1 class="home"><a href="/"><img src="http://www.animatedimages.org/data/media/361/animated-cloud-image-0013.gif" border="0" alt="animated-cloud-image-0013" /></a>{{ title }}</h1>   
+            <p>This is a weather page</p>
+            
+            <div class="form d-flex justify-content-center">
+                <div class="row mx-auto">
+                    <form class="form-group">
+                        <input id="inputQuery" type="text" class="form-control mb-3" placeholder="Location">
+                        <button class="btn btn-success mt-5">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="rep">
+                <h1>Your Weather Report:</h1><br>
+                <p>Latitude: <span id="latitude"></span></p>
+                <p>longitude: <span id="longitude"></span></p>
+                <p>Location: <span id="location"></span></p>
+                <p>Weather Report: <span id="report"></span></p>
+                <p>Summary: <span id="summary"></span></p>
+            </div>
+    </div>
+
+        {{>footer}}
+
+     <script src="/js/fetch.js"></script>
+</body>
+</html>
