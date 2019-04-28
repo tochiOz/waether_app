@@ -4,6 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
+const contactCreate = require('./conroller/contact')
 
 const app = express()
 
@@ -77,6 +78,7 @@ app.get('/help', (req, res) => {
     })
 })
 
+app.post('/con')
 //catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   res.render('404');
