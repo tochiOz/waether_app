@@ -8,7 +8,7 @@ const contactCreate = require('./conroller/contact')
 
 const app = express()
 
-const port = process.env.port || 7000
+const port = process.env.PORT || 7000
 
 const publicPath = path.join(__dirname, '../public')
 //set helps us to set a value for a given express controller
@@ -72,9 +72,9 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        message: "Weather-App is here to help You"
+app.get('/contact', (req, res) => {
+    res.render('contact', {
+        message: "Contact"
     })
 })
 

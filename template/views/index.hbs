@@ -21,13 +21,16 @@
 
         <!--Home Sections-->
             <h1 class="home"><a href="/"><img src="http://www.animatedimages.org/data/media/361/animated-cloud-image-0013.gif" border="0" alt="animated-cloud-image-0013" /></a>{{ title }}</h1>   
-            <p>This is a weather page</p>
+            <p>The Most Used Weather Application</p>
             
             <div class="form d-flex justify-content-center">
                 <div class="row mx-auto">
                     <form class="form-group">
                         <input id="inputQuery" type="text" class="form-control mb-3" placeholder="Location">
-                        <button class="btn btn-success mt-5">Search</button>
+                        <button 
+                            class="btn btn-danger mt-5"
+                            style="border: none;"
+                            >Search</button>
                     </form>
                 </div>
             </div>
@@ -44,6 +47,8 @@
 
         {{>footer}}
 
-     <script src="/js/fetch.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/fetch.js"></script>
 </body>
 </html>

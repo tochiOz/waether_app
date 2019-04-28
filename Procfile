@@ -1,1 +1,1 @@
-web: nodemon src/app.js -e js,hbs
+web: node src/app.js
