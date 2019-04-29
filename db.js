@@ -16,9 +16,9 @@ const createContactTable = () => {
     const queryText =
     `
     CREATE TABLE IF NOT EXISTS
-    weatherContact(
+    weather_contact(
         id UUID PRIMARY KEY,
-        name   VARCHAR,
+        full_name VARCHAR(128) NOT NULL,
         email VARCHAR(200) UNIQUE NOT NULL,
         number VARCHAR(128) NOT NULL,
         message TEXT NOT NULL,
@@ -35,11 +35,30 @@ const createContactTable = () => {
     })
 }
 
+const dropContactTable = () => {
+    const queryText = 'DROP TABLE IF EXIST weather_contact returning *'
+    
+    pool.query(queryText) 
+    .then((res) => {
+        console.log(res)
+        //query the table and end the connection
+        pool.end()
+    })
+    .catch(e => {
+        console.log(e)
+        pool.end()
+    })
+}
+
+
 pool.on('remove', () => {
     console.log('Client Removed')
     process.exit(0)
 })
 
-module.exports = createContactTable
+module.exports = {
+    createContactTable,
+    dropContactTable
+}
 
 require('make-runnable')

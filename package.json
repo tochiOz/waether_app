@@ -14,7 +14,9 @@
   "author": "Tueloper",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
+    "director": "^1.2.8",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "hbs": "^4.0.4",

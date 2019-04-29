@@ -2,14 +2,14 @@ const express = require('express')
 const chalk = require('chalk')
 const path = require('path')
 const hbs = require('hbs')
+const bodyParser = require('body-parser')
 const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
-const contactCreate = require('./conroller/contact')
+const router = require('./routes/router')
 
 const app = express()
 
 const port = process.env.PORT || 7000
-
 
 
 const publicPath = path.join(__dirname, '../public')
@@ -27,9 +27,11 @@ app.set('views', viewPath)
 hbs.registerPartials(reusePath)
 
 
-
-
-
+//Telling express to use router to make api calls
+app.use(bodyParser.json())
+// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use('/', router)
 //Define the routes and static directory
 app.use(express.static(publicPath))
 //the render is used to render files from the views folder
@@ -68,9 +70,7 @@ app.get('/weather', (req, res) => {
                 Summary: summary
             })            
         }) 
-       
     })
-    
 })
 
 app.get('/about', (req, res) => {
@@ -86,9 +86,6 @@ app.get('/contact', (req, res) => {
 })
 
 
-
-//api to post messages from the contact page
-app.post('/contact/message', contactCreate.contactConnect)
 
 
 
