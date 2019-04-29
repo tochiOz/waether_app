@@ -8,21 +8,21 @@ const contactCreate = {
      * Create a Contact controller
      */
 
-    async contactConnect(req, res) {
+    contactConnect(req, res) {
         const text = `INSERT INTO 
-        weathercontact(id, full_name, email, number, message, created_date) VALUES($1, $2, $3, $4, $5, $6)
-        returning *`
+        weathercontact( id, name, email, number, message, created_date ) 
+        VALUES($1, $2, $3, $4, $5, $6) returning *`
 
         const values = [
             uuidv4(),
-            req.body.full_name,
+            req.body.name,
             req.body.email,
             req.body.number,
             req.body.message,
             moment(new Date())
         ]
 
-        await pool.query(text, values)
+        pool.query(text, values)
         .then((data) => {
             return res.status(200).json({
                 status: "Message Sent",

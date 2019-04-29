@@ -18,8 +18,8 @@ const createContactTable = () => {
     CREATE TABLE IF NOT EXISTS
     weatherContact(
         id UUID PRIMARY KEY,
-        name TEXT NOT NULL,
-        email VARCHAR(128) UNIQUE NOT NULL,
+        name   VARCHAR,
+        email VARCHAR(200) UNIQUE NOT NULL,
         number VARCHAR(128) NOT NULL,
         message TEXT NOT NULL,
         created_date TIMESTAMP
