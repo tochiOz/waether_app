@@ -25,19 +25,22 @@ const contactCreate = (req, res) => {
         req.body.message,
         moment(new Date())
     ]
+    // return console.log(req.body)
     // console.log(JSON.stringify(values.req.body.full_name))
-    // return console.log(values.full_name)   
+    // return console.log(req)   
     
     pool.query(text, values, (e, data) => {
         if (e) {
-            return res.status(400).send(e.message)
+            res.status(400).send(e.message)
+            // return res.redirect('/contact');
         } else {
-            console.log(data.rows)
-            return res.status(200).json({
+            
+            res.status(200).json({
                 status: "Message Sent",
                 message: data.rows
             })
         }
+        // return res.redirect('/contact')
     })
        
     

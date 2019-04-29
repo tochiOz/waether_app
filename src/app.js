@@ -5,9 +5,11 @@ const hbs = require('hbs')
 const bodyParser = require('body-parser')
 const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
-const router = require('./routes/router')
+// const router = require('./routes/router')
+const contactCreate = require('./conroller/contact')
 
 const app = express()
+
 
 const port = process.env.PORT || 7000
 
@@ -28,10 +30,15 @@ hbs.registerPartials(reusePath)
 
 
 //Telling express to use router to make api calls
+
+// app.use('/', router)
 app.use(bodyParser.json())
-// app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use('/', router)
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.post('/api/contact/message', contactCreate )
+
+
+
 //Define the routes and static directory
 app.use(express.static(publicPath))
 //the render is used to render files from the views folder
