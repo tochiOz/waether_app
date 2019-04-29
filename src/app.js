@@ -4,10 +4,13 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
+const contactCreate = require('./conroller/contact')
 
 const app = express()
 
 const port = process.env.PORT || 7000
+
+
 
 const publicPath = path.join(__dirname, '../public')
 //set helps us to set a value for a given express controller
@@ -15,11 +18,16 @@ const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../template/views')
 const reusePath = path.join(__dirname, '../template/partials')
 
+
+
 //setup handlebars and set paths for views
 app.set('view engine', 'hbs')
 //hbs uses the view folder
 app.set('views', viewPath)
 hbs.registerPartials(reusePath)
+
+
+
 
 
 //Define the routes and static directory
@@ -76,6 +84,13 @@ app.get('/contact', (req, res) => {
         message: "Contact"
     })
 })
+
+
+
+//api to post messages from the contact page
+app.post('/contact/message', contactCreate.contactConnect)
+
+
 
 //catch 404 and forward to error handler
 // app.use(function(req, res, next) {
