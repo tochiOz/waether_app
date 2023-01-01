@@ -18,6 +18,6 @@
     "hbs": "^4.0.4",
     "nodemon": "^1.18.11",
     "request": "^2.88.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^13.2.0"
   }
 }
